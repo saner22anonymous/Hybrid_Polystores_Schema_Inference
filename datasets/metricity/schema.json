@@ -1,1 +1,951 @@
-
+[
+    {
+        "bsonType": "object",
+        "title": "binaryHistories",
+        "required": [
+            "_id",
+            "bh_entityTipe",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "bh_entityTipe": {
+                "bsonType": "string"
+            },
+            "versionsId": {
+                "bsonType": "object"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "binaryVersions",
+        "required": [
+            "_id",
+            "bv_entityTipe",
+            "changeType",
+            "fileDiff",
+            "packageVersionId",
+            "tag",
+            "namingData",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "bv_entityTipe": {
+                "bsonType": "string"
+            },
+            "changeType": {
+                "bsonType": "string"
+            },
+            "packageVersionId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "tag": {
+                "bsonType": "object"
+            },
+            "namingData": {
+                "bsonType": "object"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "fileSize": {
+                "bsonType": "string"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "classHistories",
+        "required": [
+            "_id",
+            "ch_entityTipe",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "ch_entityTipe": {
+                "bsonType": "string"
+            },
+            "versionsId": {
+                "bsonType": "object"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "classVersions",
+        "required": [
+            "_id",
+            "cv_entityTipe",
+            "changeType",
+            "fileDiff",
+            "packageVersionId",
+            "tag",
+            "namingData",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "tableAccessesId",
+            "modifiedTableAccessesId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "cv_entityTipe": {
+                "bsonType": "string"
+            },
+            "changeType": {
+                "bsonType": "string"
+            },
+            "packageVersionId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "tag": {
+                "bsonType": "object"
+            },
+            "namingData": {
+                "bsonType": "object"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 2,
+                "uniqueItems": true
+            },
+            "tableAccessesId": {
+                "bsonType": "array,",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedTableAccessesId": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "commits",
+        "required": [
+            "_id",
+            "commitTime",
+            "commitShortMessage",
+            "commitFullMessage",
+            "repositoryVersionId",
+            "packageVersionsId",
+            "classVersionsId",
+            "binariesVersionsId",
+            "datafileVersionsId",
+            "tableVersionsId",
+            "databaseVersionsId",
+            "tableAccessesId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "commitTime": {
+                "bsonType": "Date"
+            },
+            "commitShortMessage": {
+                "bsonType": "string"
+            },
+            "commitFullMessage": {
+                "bsonType": "string"
+            },
+            "repositoryVersionId": {
+                "bsonType": "string"
+            },
+            "packageVersionsId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "classVersionsId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "binariesVersionsId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "datafileVersionsId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "tableVersionsId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "databaseVersionsId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "tableAccessesId": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "datafileHistories",
+        "required": [
+            "_id",
+            "dfh_entityTipe",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "dfh_entityTipe": {
+                "bsonType": "string"
+            },
+            "versionsId": {
+                "bsonType": "object"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "datafileVersions",
+        "required": [
+            "_id",
+            "dfv_entityTipe",
+            "changeType",
+            "fileDiff",
+            "packageVersionId",
+            "tag",
+            "namingData",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "dfv_entityTipe": {
+                "bsonType": "string"
+            },
+            "changeType": {
+                "bsonType": "string"
+            },
+            "packageVersionId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "tag": {
+                "bsonType": "object"
+            },
+            "namingData": {
+                "bsonType": "object"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 2,
+                "uniqueItems": true
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "packageHistories",
+        "required": [
+            "_id",
+            "subPackagesId",
+            "pathDepthIndex",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "subPackagesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "pathDepthIndex": {
+                "bsonType": "int"
+            },
+            "versionsId": {
+                "bsonType": "object"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "packageVersions",
+        "required": [
+            "_id",
+            "classesId",
+            "modifiedClassesId",
+            "datafilesId",
+            "modifiedDatafilesId",
+            "binariesId",
+            "modifiedBinariesId",
+            "tag",
+            "namingData",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "classesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedClassesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "datafilesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedDatafilesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "binariesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedBinariesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "tag": {
+                "bsonType": "object"
+            },
+            "namingData": {
+                "bsonType": "object"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 2,
+                "uniqueItems": true
+            },
+            "parentVersionId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "repositories",
+        "required": [
+            "_id",
+            "owner",
+            "name",
+            "url",
+            "isRunning",
+            "tags",
+            "commitsSha1",
+            "packageHistoriesId",
+            "classHistoriesId",
+            "binaryHistoriesId",
+            "datafileHistoriesId",
+            "tableHistoriesId",
+            "databaseHistoriesId",
+            "repositoryHistoriesId",
+            "tableAccessId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "owner": {
+                "bsonType": "string"
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "url": {
+                "bsonType": "string"
+            },
+            "isRunning": {
+                "bsonType": "bool"
+            },
+            "tags": {
+                "bsonType": "array",
+                "items": "object"
+            },
+            "commitsSha1": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "packageHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "classHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "binaryHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "datafileHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "tableHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "databaseHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "repositoryHistoriesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "tableAccessesId": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "repositoryHistories",
+        "required": [
+            "_id",
+            "rh_entityTipe",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "rh_entityTipe": {
+                "bsonType": "string"
+            },
+            "versionsId": {
+                "bsonType": "'object'"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "repositoryVersions",
+        "required": [
+            "_id",
+            "packagesId",
+            "modifiedPackagesId",
+            "datafilesId",
+            "modifiedDatafilesId",
+            "databasesId",
+            "modifiedDatabasesId",
+            "tableAccessesId",
+            "modifiedTableAccessesId",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "packagesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedPackagesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "datafilesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedDatafilesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "databasesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedDatabasesId": {
+                "bsonType": "array",
+                "items": "string",
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "tableAccessesId": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedTableAccessesId": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 2,
+                "uniqueItems": true
+            },
+            "parentVersionId": {
+                "bsonType": "string"
+            },
+            "childVersionId": {
+                "bsonType": "string"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "tableHistories",
+        "required": [
+            "_id",
+            "th_entityType",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "th_entityType": {
+                "bsonType": "string"
+            },
+            "versionsId": {
+                "bsonType": "object"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "tableVersions",
+        "required": [
+            "_id",
+            "tv_entityType",
+            "changeType",
+            "databaseVersionId",
+            "tableAccessesId",
+            "modifiedTableAccessesId",
+            "columns",
+            "tag",
+            "namingData",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "tv_entityType": {
+                "bsonType": "string"
+            },
+            "databaseVersionId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "tableAccessesId": {
+                "bsonType": "array,",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "modifiedTableAccessesId": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 0,
+                "uniqueItems": true
+            },
+            "columns": {
+                "bsonType": "array",
+                "items": "string",
+                "minLength": 1
+            },
+            "changeType": {
+                "bsonType": "string"
+            },
+            "tag": {
+                "bsonType": "object"
+            },
+            "namingData": {
+                "bsonType": "object"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 2,
+                "uniqueItems": true
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "databaseHistories",
+        "required": [
+            "_id",
+            "dbh_entityType",
+            "versionsId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "dbh_entityType": {
+                "bsonType": "string"
+            },
+            "versionsId": {
+                "bsonType": "object"
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "databaseVersions",
+        "required": [
+            "_id",
+            "dbv_entityType",
+            "tableVersionsId",
+            "modifiedTableVersionsId",
+            "changeType",
+            "tag",
+            "namingData",
+            "commitSha",
+            "versionNumber",
+            "historyId",
+            "metricData",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "dbv_entityType": {
+                "bsonType": "string"
+            },
+            "tableVersionsId": {
+                "bsonType": "array",
+                "minLength": 1
+            },
+            "modifiedTableVersionsId": {
+                "bsonType": "array",
+                "minLength": 1
+            },
+            "changeType": {
+                "bsonType": "string"
+            },
+            "tag": {
+                "bsonType": "object"
+            },
+            "namingData": {
+                "bsonType": "object"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "versionNumber": {
+                "bsonType": "long",
+                "minimum": 0
+            },
+            "historyId": {
+                "bsonType": "string",
+                "minLength": 39,
+                "maxLength": 39
+            },
+            "metricData": {
+                "bsonType": "array",
+                "items": "object",
+                "minItems": 2,
+                "uniqueItems": true
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    },
+    {
+        "bsonType": "object",
+        "title": "tableAccess",
+        "required": [
+            "_id",
+            "iv_entityType",
+            "changeType",
+            "commitSha",
+            "classVersionId",
+            "tableVersionId",
+            "_class"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "iv_entityType": {
+                "bsonType": "string"
+            },
+            "changeType": {
+                "bsonType": "string"
+            },
+            "commitSha": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "classVersionId": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "tableVersionId": {
+                "bsonType": "string",
+                "minLength": 40,
+                "maxLength": 40
+            },
+            "_class": {
+                "bsonType": "string"
+            }
+        }
+    }
+]
