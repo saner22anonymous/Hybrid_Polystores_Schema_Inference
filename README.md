@@ -13,7 +13,7 @@ The [deployment](deployment/) folder contains the Docker deployment resources. T
 - the 'redisdb' Redis database with both movies and actors, and beers data
 - the 'mymongo' MongoDB database with Metricity dataset
 
-Due to the size of the data, 'classVersions.json' and 'datafileVersions.json' files are not contained in the data folder. To complete the MongoDB with both both collections, please extract the files from 'metricity-collections.tar.bz2' compressed folder under [Metricity dataset](datasets/metricity/), and paste both files in [Metricity deployment folder](deployment/data/mongo-seed/metricity-collections/). 
+Due to the size of the data, 'classVersions.json' and 'datafileVersions.json' files are not contained in the data folder. To complete the MongoDB with both collections, please extract the files from 'metricity-collections.tar.bz2' compressed folder under [Metricity dataset](datasets/metricity/), and paste both files in [Metricity deployment folder](deployment/data/mongo-seed/metricity-collections/). 
 
 To deploy the polystore, run the following Docker command from [deployment folder](deployment/):
 ```docker-compose up```
