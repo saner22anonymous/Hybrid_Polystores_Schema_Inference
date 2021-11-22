@@ -3,7 +3,7 @@ This repository is the replication package for the paper: "Schema Inference in H
 
 The repository contains the following resources:
 - the Docker deployment repository (docker compose file and datasets) permitting to deploy the polystore presented in the 'Preliminary Evaluation' section of the paper.
-- the schema inference tool (executable JAR file ahd configuration file)
+- the schema inference tool (executable JAR file and configuration file)
 - the preliminary evaluation of the approach
 - the Metricity MongoDB dataset
 
