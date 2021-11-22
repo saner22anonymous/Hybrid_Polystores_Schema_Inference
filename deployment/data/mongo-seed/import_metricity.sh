@@ -1,0 +1,1 @@
+for filename in /mongo-seed/metricity-collections/*.json; do echo $(basename $filename .json); mongoimport --host mymongo --db mymongo --collection $(basename $filename .json) --file $filename --type json; done
