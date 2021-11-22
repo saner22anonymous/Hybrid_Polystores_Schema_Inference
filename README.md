@@ -6,7 +6,43 @@ The repository contains the following resources:
 - the Docker deployment file (+ databases configuration and initialisation)
 
 ## Schema Inference Tool
+The [application](application/) folder contains the schema inference tool and a polystore configuration file. The Java application depends on that configuration file containing the following default configuration properties for the databases connections:
+```
+URL_1=relational.fit.cvut.cz
+PORT_1=3306
+DRIVER_1=mariadb
+TYPE_1=sql
+USER_1=guest
+PASSWORD_1=relational
+SCHEMA_1=northwind
 
+URL_2=localhost
+PORT_2=27100
+DRIVER_2=
+TYPE_2=mongo
+USER_2=
+PASSWORD_2=
+SCHEMA_2=mymongo
+
+URL_3=localhost
+PORT_3=6300
+DRIVER_3=
+TYPE_3=redis
+USER_3=
+PASSWORD_3=
+SCHEMA_3=redisdb
+```
+
+To execute the Java application, run the following command:
+```java -jar database-schema-extractor.jar -extract <configuration_file_path> <output_hydra_file_path>```
+with:
+- <configuration_file_path>: the configuration file path containing the databases connections data
+- <output_hydra_file_path>: the HyDRa output file path. The application open or create that file, and writes the polystore schema content into it.
+
+For example:
+```java -jar database-schema-extractor.jar -extract configuration.properties polystore.pml```
+
+The application reads the 'configuration.properties' file to connect to the polystore's dataases, extracts the physical schemas of the different databases and generates a 'polystore.pml' HyDRa file containing the schema of the polystore.
 
 ## Deployment
 The [deployment](deployment/) folder contains the Docker deployment resources. The Docker compose file configures the polystore defined in the 'Preliminary evaluation' section. It permits to deploy:
@@ -38,4 +74,5 @@ Address: relational.fit.cvut.cz
 Port: 3306
 User: guest
 Password: relational
+Schema: northwind
 ```
