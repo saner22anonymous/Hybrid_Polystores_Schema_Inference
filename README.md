@@ -9,7 +9,7 @@ The repository contains the following resources:
 
 
 ## Deployment
-The folder contains the Docker deployment resources. The Docker compose file configures the polystore defined in the 'Preliminary evaluation' section. It permits to deploy:
+The [deployment](deployment/) folder contains the Docker deployment resources. The Docker compose file configures the polystore defined in the 'Preliminary evaluation' section. It permits to deploy:
 - the 'redisdb' Redis database with both movies and actors, and beers data
 - the 'mymongo' MongoDB database with Metricity dataset
 
