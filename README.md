@@ -72,7 +72,7 @@ To execute the Java application, run the following command:
 ```java -jar database-schema-extractor.jar -extract <configuration_file_path> <output_hydra_file_path>```
 with:
 - <configuration_file_path>: the configuration file path containing the databases connections data
-- <output_hydra_file_path>: the HyDRa output file path. The application open or create that file, and writes the polystore schema content into it.
+- <output_hydra_file_path>: the HyDRa output file path. The application opens or creates that file, and writes the polystore schema content into it.
 
 For example:
 ```java -jar database-schema-extractor.jar -extract configuration.properties polystore.pml```
