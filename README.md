@@ -76,3 +76,6 @@ User: guest
 Password: relational
 Schema: northwind
 ```
+
+## Evaluation
+The [evaluation](evaluation/) folder contains the resources for the preliminary evaluation of our approach. It contains the generated polystore HyDRa file and the input datasets schemas references.
